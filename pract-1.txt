@@ -1,0 +1,58 @@
+import numpy as np
+import pandas as pd
+
+df=pd.read_csv(r"E:\Desktop\possum.csv")
+
+df
+
+df.info()
+
+df.describe()
+
+# Central Tendencies
+
+# 1.Mean
+
+mean_age=df['age'].mean()
+print("Mean age is:",mean_age)
+
+mean_hdlngth=df['hdlngth'].mean()
+print("Mean Hdlength is:",mean_hdlngth)
+
+# 2.Median
+
+med_skullw=df['skullw'].median()
+print("Median of Skullw is: ",med_skullw)
+
+med_totlngth=df['totlngth'].median()
+print("Median of totlngth is: ",med_totlngth)
+
+# 3.Mode
+
+mode_sex=df['sex'].mode()
+print("Mode of sex is: ",mode_sex)
+
+mode_pop=df['Pop'].mode()
+print("Mode of Pop is: ",mode_pop)
+
+mode_site=df['site'].mode()
+print("Mode of site is:",mode_site)
+
+# Measure of Dispersion
+
+# 1.Variance
+
+var_taill=df['taill'].var()
+print("Variance of Taill is: ",var_taill)
+
+var_footlgth=df['footlgth'].var()
+print("Variance of footlength is: ",var_footlgth)
+
+# 2.Standard Deviation
+
+std_earconch=df['earconch'].std()
+print("Standard Deviation of earconch is: ",std_earconch)
+
+std_chest=df['chest'].std()
+print("Standard Deviation of Chest is: ",std_chest)
+

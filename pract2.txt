@@ -1,0 +1,88 @@
+import numpy as np
+import pandas as pd
+
+df=pd.read_csv(r"E:\Desktop\marksheet.csv")
+
+df
+
+df.info()
+
+df.describe()
+
+# Statistics
+
+import statistics as stats
+
+science_scores = df['Science']
+mean_science = stats.mean(science_scores)
+print(mean_science)  
+
+
+median_science = stats.median(science_scores)
+print(median_science)  
+
+
+maths_scores = df['Maths']
+mode_maths = stats.mode(maths_scores)
+print(mode_maths)  
+
+
+# Math
+
+import math
+
+first_science_score = df['Science'].iloc[0]
+sqrt_science = math.sqrt(first_science_score)
+print(sqrt_science)  
+
+
+first_maths_score = df['Maths'].iloc[0]
+factorial_maths = math.factorial(first_maths_score)
+print(factorial_maths)  
+
+
+log_science = math.log(first_science_score)
+print(log_science)  
+
+
+# Numpy
+
+import numpy as np
+
+subject_array = np.array([df['Science'], df['Maths']])
+print(subject_array)  
+
+
+subject_scores = df[['Science', 'English', 'History', 'Maths']].values
+mean_all_subjects = np.mean(subject_scores, axis=0)
+print(mean_all_subjects)  
+
+
+std_maths = np.std(df['Maths'])
+print(std_maths)  
+
+
+# Sys
+
+import sys
+print(sys.version)  
+
+print(sys.argv)
+
+print(sys.path)
+
+# Scipy
+
+from scipy import stats as sp_stats
+
+mode_maths_scipy = sp_stats.mode(df['Maths'])
+print(mode_maths_scipy)  
+
+
+pearson_corr = sp_stats.pearsonr(df['Science'], df['Maths'])
+print(pearson_corr) 
+
+t_test_result = sp_stats.ttest_ind(df['Science'], df['Maths'])
+print(t_test_result)  
+
+

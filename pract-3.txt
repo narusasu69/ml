@@ -1,0 +1,41 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df=pd.read_csv(r"E:\Desktop\marksheet.csv")
+
+df
+
+df.info()
+
+df.describe()
+
+plt.figure(figsize=(8, 5))
+plt.hist(df['Science'], bins=10, color='skyblue', edgecolor='black')
+plt.title('Distribution of Science Scores')
+plt.xlabel('Science Scores')
+plt.ylabel('Frequency')
+plt.show()
+
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(data=df[['Science', 'English', 'History', 'Maths']])
+plt.title('Boxplot of Scores in Different Subjects')
+plt.ylabel('Scores')
+plt.show()
+
+
+
+sns.pairplot(df[['Science', 'English', 'History', 'Maths']])
+plt.suptitle('Pairplot of Subject Scores',y=1.02)
+plt.show()
+
+plt.figure(figsize=(8, 6))
+corr_matrix = df[['Science', 'English', 'History', 'Maths']].corr()
+sns.heatmap(corr_matrix, annot=True)
+plt.title('Correlation Heatmap of Subject Scores')
+plt.show()
+
+# These are basic codes. You can add your own....
+
